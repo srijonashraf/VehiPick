@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CAR HUT</title>
+
+	<style>
+		/* Basic CSS comment */
+		body {
+			background: rgb(161, 161, 161);
+			color: white;
+			width: 960px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			font-size: 100px;
+			color: #333;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+	</style>
+
+	<script>
+
+		var username = prompt("Hello, What's your name?"); // One Box will appear to take input from user.
+		var car = new Array("BMW", "AUDI", "Mercedes", "TOYOTA", "MITSUBISHI", "TESLA", "NOAH", "MAZDA", "PREMIO", "ALLEON", "HUNDAI");
+
+		var images = new Array("Car-1.jpg", "Car-2.jpg", "Car-3.jpg", "Car-4.jpg", "Car-5.jpg", "Car-6.jpg", "Car-7.jpg", "Car-8.jpg", "Car-9.jpg", "Car-10.jpg", "Car-11.jpg");
+
+		var num = Math.floor((Math.random() * 10) + 1);
+
+
+		if (username == '') {
+			alert('Please enter a name!')
+			window.location.reload();
+		}
+
+		else {
+
+			const str = username;
+			const str2 = str.toUpperCase();
+
+			document.write("<h1>Hello " + str2 + "! You won a " + car[num] + "!</h1>");
+
+			function change() {
+				document.getElementById("images-id").src = images[num];
+			}
+
+		}
+
+
+		// function onloadPreventer(fun) {
+		// 	if (window.location.hash != "#loaded") {
+		// 		//alert(window.location.hash);
+		// 		window.location = window.location + "#loaded";
+		// 		//alert(window.location.hash);
+		// 		fun;
+		// 	};
+		// };
+
+	</script>
+
+</head>
+
+<body>
+
+	<style>
+		img {
+			height: 500px;
+			width: auto;
+			border-radius: 8px;
+			box-shadow: 5px 15px 30px rgb(63, 63, 63);
+		}
+	</style>
+
+	<img src="Car-1.jpg" id="images-id" onload="setTimeout(change,1000)">
+
+</body>
+
+</html>
